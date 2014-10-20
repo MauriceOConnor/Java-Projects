@@ -125,69 +125,7 @@ public class TicTacToeBoard {
 					grid[0][0] = player; // mark the underlying board with 
 					// user's selection
 
-					winner = checkWin(grid); 
-
-					if(winner == player) {
-						JOptionPane.showMessageDialog(jfrm, "You win!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-
-					player = (char) (player + waiter); // swap whose turn it is
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
-
-					winner = computerGo(grid); // this method plays the 
-					// computer's turn
-
-					if(compFirst) winner = checkWin(grid);
-					// if the computer goes first it also goes last (there 
-					// are 9 moves). This if clause ensures that, if the 
-					// board is full when the computer makes its move, it is 
-					// registered as a draw.
-
-					if(winner == 'X' || winner == 'O') {
-						JOptionPane.showMessageDialog(jfrm, "Computer wins!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
-
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
+					checkGoCheck();
 				}
 
 			}
@@ -205,64 +143,7 @@ public class TicTacToeBoard {
 
 					grid[0][1] = player;
 
-					winner = checkWin(grid);
-
-					if(winner == player) {
-						JOptionPane.showMessageDialog(jfrm, "You win!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) { 
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-
-					player = (char) (player + waiter); // swap whose turn it is
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
-
-					winner = computerGo(grid);
-
-					if(compFirst) winner = checkWin(grid);
-
-					if(winner == 'X' || winner == 'O') {
-						JOptionPane.showMessageDialog(jfrm, "Computer wins!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
-
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
+					checkGoCheck();
 				}
 
 			}
@@ -280,64 +161,7 @@ public class TicTacToeBoard {
 
 					grid[0][2] = player;
 
-					winner = checkWin(grid);
-
-					if(winner == player) {
-						JOptionPane.showMessageDialog(jfrm, "You win!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-
-					player = (char) (player + waiter); // swap whose turn it is
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
-
-					winner = computerGo(grid);
-
-					if(compFirst) winner = checkWin(grid);
-
-					if(winner == 'X' || winner == 'O') {
-						JOptionPane.showMessageDialog(jfrm, "Computer wins!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} buttonsEnabled(false);
-
-					}
-
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
+					checkGoCheck();
 				}
 			}
 		});
@@ -354,62 +178,7 @@ public class TicTacToeBoard {
 
 					grid[1][0] = player;
 
-					winner = checkWin(grid);
-
-					if(winner == player) {
-						JOptionPane.showMessageDialog(jfrm, "You win!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-
-					player = (char) (player + waiter); // swap whose turn it is
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
-
-					winner = computerGo(grid);
-
-					if(compFirst) winner = checkWin(grid);
-
-					if(winner == 'X' || winner == 'O') {
-						JOptionPane.showMessageDialog(jfrm, "Computer wins!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-					}
-
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-					}
+					checkGoCheck();
 				}
 			}
 		});
@@ -426,64 +195,7 @@ public class TicTacToeBoard {
 
 					grid[1][1] = player;
 
-					winner = checkWin(grid);
-
-					if(winner == player) {
-						JOptionPane.showMessageDialog(jfrm, "You win!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-
-					player = (char) (player + waiter); // swap whose turn it is
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
-
-					winner = computerGo(grid);
-
-					if(compFirst) winner = checkWin(grid);
-
-					if(winner == 'X' || winner == 'O') {
-						JOptionPane.showMessageDialog(jfrm, "Computer wins!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
-
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
+					checkGoCheck();
 				}
 			}
 		});
@@ -500,64 +212,7 @@ public class TicTacToeBoard {
 
 					grid[1][2] = player;
 
-					winner = checkWin(grid);
-
-					if(winner == player) {
-						JOptionPane.showMessageDialog(jfrm, "You win!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-
-					player = (char) (player + waiter); // swap whose turn it is
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
-
-					winner = computerGo(grid);
-
-					if(compFirst) winner = checkWin(grid);
-
-					if(winner == 'X' || winner == 'O') {
-						JOptionPane.showMessageDialog(jfrm, "Computer wins!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
-
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
+					checkGoCheck();
 				}
 			}
 		});
@@ -574,64 +229,7 @@ public class TicTacToeBoard {
 
 					grid[2][0] = player;
 
-					winner = checkWin(grid);
-
-					if(winner == player) {
-						JOptionPane.showMessageDialog(jfrm, "You win!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-
-					player = (char) (player + waiter); // swap whose turn it is
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
-
-					winner = computerGo(grid);
-
-					if(compFirst) winner = checkWin(grid);
-
-					if(winner == 'X' || winner == 'O') {
-						JOptionPane.showMessageDialog(jfrm, "Computer wins!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
-
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
+					checkGoCheck();
 				}
 			}
 		});
@@ -648,64 +246,7 @@ public class TicTacToeBoard {
 
 					grid[2][1] = player;
 
-					winner = checkWin(grid);
-
-					if(winner == player) {
-						JOptionPane.showMessageDialog(jfrm, "You win!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-
-					player = (char) (player + waiter); // swap whose turn it is
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
-
-					winner = computerGo(grid);
-
-					if(compFirst) winner = checkWin(grid);
-
-					if(winner == 'X' || winner == 'O') {
-						JOptionPane.showMessageDialog(jfrm, "Computer wins!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
-
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
+					checkGoCheck();
 				}
 			}
 		});
@@ -722,64 +263,7 @@ public class TicTacToeBoard {
 
 					grid[2][2] = player;
 
-					winner = checkWin(grid);
-
-					if(winner == player) {
-						JOptionPane.showMessageDialog(jfrm, "You win!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-						return;
-					}
-
-					player = (char) (player + waiter); // swap whose turn it is
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
-
-					winner = computerGo(grid);
-
-					if(compFirst) winner = checkWin(grid);
-
-					if(winner == 'X' || winner == 'O') {
-						JOptionPane.showMessageDialog(jfrm, "Computer wins!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
-
-					if(winner == 'D') {
-						JOptionPane.showMessageDialog(jfrm, "Draw!",
-								"End of Game", JOptionPane.PLAIN_MESSAGE);
-						responseAgain = JOptionPane.showConfirmDialog(jfrm, 
-								"Play again?", "", JOptionPane.YES_NO_OPTION);
-						if(responseAgain == JOptionPane.YES_OPTION) {
-							reset();
-							askSymbol();
-						} else buttonsEnabled(false);
-
-					}
+					checkGoCheck();
 				}
 			}
 		});
@@ -896,7 +380,7 @@ public class TicTacToeBoard {
 			player = 'X';
 			waiter = 'O';
 			compFirst = true;
-			winner = computerGo(grid);
+			winner = computerGo();
 		} else compFirst = false;
 	}
 
@@ -1017,6 +501,89 @@ public class TicTacToeBoard {
 
 
 	}
+	
+	/*
+	 * A method created to house a repeated section of code in the 
+	 * actionListeners of the buttons
+	 * 
+	 * It checks for a win after a player's turn,
+	 * 
+	 * calls the method which plays the computer's turn (computerGo),
+	 * 
+	 * and checks for a win again
+	 * 
+	 */
+	
+	void checkGoCheck() {
+		
+		winner = checkWin(grid); 
+
+		if(winner == player) {
+			JOptionPane.showMessageDialog(jfrm, "You win!",
+					"End of Game", JOptionPane.PLAIN_MESSAGE);
+			responseAgain = JOptionPane.showConfirmDialog(jfrm, 
+					"Play again?", "", JOptionPane.YES_NO_OPTION);
+			if(responseAgain == JOptionPane.YES_OPTION) {
+				reset();
+				askSymbol();
+			} else buttonsEnabled(false);
+
+			return;
+		}
+		if(winner == 'D') {
+			JOptionPane.showMessageDialog(jfrm, "Draw!",
+					"End of Game", JOptionPane.PLAIN_MESSAGE);
+			responseAgain = JOptionPane.showConfirmDialog(jfrm, 
+					"Play again?", "", JOptionPane.YES_NO_OPTION);
+			if(responseAgain == JOptionPane.YES_OPTION) {
+				reset();
+				askSymbol();
+			} else buttonsEnabled(false);
+
+			return;
+		}
+
+		switchPlayer();
+
+		winner = computerGo(); // this method plays the 
+		// computer's turn
+
+		if(compFirst) winner = checkWin(grid);
+		// if the computer goes first it also goes last (there 
+		// are 9 moves). This if clause ensures that, if the 
+		// board is full when the computer makes its move, it is 
+		// registered as a draw.
+
+		if(winner == 'X' || winner == 'O') {
+			JOptionPane.showMessageDialog(jfrm, "Computer wins!",
+					"End of Game", JOptionPane.PLAIN_MESSAGE);
+			responseAgain = JOptionPane.showConfirmDialog(jfrm, 
+					"Play again?", "", JOptionPane.YES_NO_OPTION);
+			if(responseAgain == JOptionPane.YES_OPTION) {
+				reset();
+				askSymbol();
+			} else buttonsEnabled(false);
+
+		}
+
+		if(winner == 'D') {
+			JOptionPane.showMessageDialog(jfrm, "Draw!",
+					"End of Game", JOptionPane.PLAIN_MESSAGE);
+			responseAgain = JOptionPane.showConfirmDialog(jfrm, 
+					"Play again?", "", JOptionPane.YES_NO_OPTION);
+			if(responseAgain == JOptionPane.YES_OPTION) {
+				reset();
+				askSymbol();
+			} else buttonsEnabled(false);
+
+		}
+	}
+	
+	void switchPlayer() {
+		player = (char) (player + waiter); // swap whose turn it is
+		waiter = (char) (player - waiter);
+		player = (char) (player - waiter);
+	}
 
 	/*
     Checks for optimal move and either: 
@@ -1038,12 +605,14 @@ public class TicTacToeBoard {
     under 'Strategy'
 
 	 */    
-	char computerGo(char[][] a) {
+	char computerGo() {
 		int x, y, z = 0, i;
 		boolean boolTopLeft, boolTopRight, boolBottomLeft, boolBottomRight;
 
 
 		// check for ability to win in next move
+		// (i.e. check for a line with two of your symbol and the last 
+		// tile free) 
 
 		// check rows and columns
 
@@ -1053,23 +622,23 @@ public class TicTacToeBoard {
 			y = 0;
 			z = 0;
 			{    
-				if(a[i][0] == player) x += 1;
+				if(grid[i][0] == player) x += 1;
 				else z = 1;
-				if(a[i][0] == waiter) y += 1;
+				if(grid[i][0] == waiter) y += 1;
 			}
 			{
-				if(a[i][1] == player) x += 1;
+				if(grid[i][1] == player) x += 1;
 				else z = 2;
-				if(a[i][1] == waiter) y += 1;
+				if(grid[i][1] == waiter) y += 1;
 			}
 			{
-				if(a[i][2] == player) x += 1;
+				if(grid[i][2] == player) x += 1;
 				else z = 3;
-				if(a[i][2] == waiter) y += 1;
+				if(grid[i][2] == waiter) y += 1;
 			} 
 
 			if(x == 2 && y != 1) {
-				a[i][z-1] = player;
+				grid[i][z-1] = player;
 				if(i == 0) {
 					if(z == 1) topLeft.setText(Character.toString(player));
 					if(z == 2) topMiddle.setText(Character.toString(player));
@@ -1096,23 +665,23 @@ public class TicTacToeBoard {
 			z = 0;
 
 			{    
-				if(a[0][i] == player) x += 1;
+				if(grid[0][i] == player) x += 1;
 				else z = 1;
-				if(a[0][i] == waiter) y += 1;
+				if(grid[0][i] == waiter) y += 1;
 			}
 			{
-				if(a[1][i] == player) x += 1;
+				if(grid[1][i] == player) x += 1;
 				else z = 2;
-				if(a[1][i] == waiter) y += 1;
+				if(grid[1][i] == waiter) y += 1;
 			}
 			{
-				if(a[2][i] == player) x += 1;
+				if(grid[2][i] == player) x += 1;
 				else z = 3;
-				if(a[2][i] == waiter) y += 1; 
+				if(grid[2][i] == waiter) y += 1; 
 			}    
 
 			if(x == 2 && y != 1) {
-				a[z-1][i] = player;
+				grid[z-1][i] = player;
 				if(i == 0) {
 					if(z == 1) topLeft.setText(Character.toString(player));
 					if(z == 2) middleLeft.setText(Character.toString(player));
@@ -1142,23 +711,23 @@ public class TicTacToeBoard {
 		y = 0;
 		z = 0;
 		{
-			if(a[0][0] == player) x += 1;
+			if(grid[0][0] == player) x += 1;
 			else z = 1;
-			if(a[0][0] == waiter) y += 1;
+			if(grid[0][0] == waiter) y += 1;
 		}
 		{
-			if(a[1][1] == player) x += 1;
+			if(grid[1][1] == player) x += 1;
 			else z = 2;
-			if(a[1][1] == waiter) y += 1;
+			if(grid[1][1] == waiter) y += 1;
 		}
 		{
-			if(a[2][2] == player) x += 1;
+			if(grid[2][2] == player) x += 1;
 			else z = 3;
-			if(a[2][2] == waiter) y += 1;
+			if(grid[2][2] == waiter) y += 1;
 		}
 
 		if(x == 2 && y != 1) {
-			a[z-1][z-1] = player;
+			grid[z-1][z-1] = player;
 			if(z == 1) topLeft.setText(Character.toString(player));
 			if(z == 2) middleMiddle.setText(Character.toString(player));
 			if(z == 3) bottomRight.setText(Character.toString(player));
@@ -1169,32 +738,32 @@ public class TicTacToeBoard {
 		y = 0;
 		z = 0;
 		{
-			if(a[0][2] == player) x += 1;
+			if(grid[0][2] == player) x += 1;
 			else z = 1;
-			if(a[0][2] == waiter) y += 1;
+			if(grid[0][2] == waiter) y += 1;
 		}
 		{
-			if(a[1][1] == player) x += 1;
+			if(grid[1][1] == player) x += 1;
 			else z = 2;
-			if(a[1][1] == waiter) y += 1;
+			if(grid[1][1] == waiter) y += 1;
 		}
 		{
-			if(a[2][0] == player) x += 1;
+			if(grid[2][0] == player) x += 1;
 			else z = 3;
-			if(a[2][0] == waiter) y += 1;
+			if(grid[2][0] == waiter) y += 1;
 		}
 
 		if(x == 2 && y != 1) {
 			if(z == 1) { 
-				a[0][2] = player;
+				grid[0][2] = player;
 				topRight.setText(Character.toString(player));
 			}
 			if(z == 2) { 
-				a[1][1] = player;
+				grid[1][1] = player;
 				middleMiddle.setText(Character.toString(player));
 			}
 			if(z == 3) { 
-				a[2][0] = player;
+				grid[2][0] = player;
 				bottomLeft.setText(Character.toString(player));
 			}
 			return player;
@@ -1211,23 +780,23 @@ public class TicTacToeBoard {
 			y = 0;
 			z = 0;
 			{    
-				if(a[i][0] == waiter) x += 1;
+				if(grid[i][0] == waiter) x += 1;
 				else z = 1;
-				if(a[i][0] == player) y += 1;
+				if(grid[i][0] == player) y += 1;
 			}
 			{
-				if(a[i][1] == waiter) x += 1;
+				if(grid[i][1] == waiter) x += 1;
 				else z = 2;
-				if(a[i][1] == player) y += 1;
+				if(grid[i][1] == player) y += 1;
 			}
 			{
-				if(a[i][2] == waiter) x += 1;
+				if(grid[i][2] == waiter) x += 1;
 				else z = 3;
-				if(a[i][2] == player) y += 1;
+				if(grid[i][2] == player) y += 1;
 			} 
 
 			if(x == 2 && y != 1) {
-				a[i][z-1] = player;
+				grid[i][z-1] = player;
 				if(i == 0) {
 					if(z == 1) topLeft.setText(Character.toString(player));
 					if(z == 2) topMiddle.setText(Character.toString(player));
@@ -1245,9 +814,7 @@ public class TicTacToeBoard {
 					if(z == 3) bottomRight.setText(Character.toString(player));
 				}
 
-				player = (char) (player + waiter); // swap whose turn it is
-				waiter = (char) (player - waiter);
-				player = (char) (player - waiter);
+				switchPlayer();
 				return 'C';
 			}
 
@@ -1256,23 +823,23 @@ public class TicTacToeBoard {
 			z = 0;
 
 			{    
-				if(a[0][i] == waiter) x += 1;
+				if(grid[0][i] == waiter) x += 1;
 				else z = 1;
-				if(a[0][i] == player) y += 1;
+				if(grid[0][i] == player) y += 1;
 			}
 			{
-				if(a[1][i] == waiter) x += 1;
+				if(grid[1][i] == waiter) x += 1;
 				else z = 2;
-				if(a[1][i] == player) y += 1;
+				if(grid[1][i] == player) y += 1;
 			}
 			{
-				if(a[2][i] == waiter) x += 1;
+				if(grid[2][i] == waiter) x += 1;
 				else z = 3;
-				if(a[2][i] == player) y += 1; 
+				if(grid[2][i] == player) y += 1; 
 			}                
 
 			if(x == 2 && y != 1) {
-				a[z-1][i] = player;
+				grid[z-1][i] = player;
 				if(i == 0) {
 					if(z == 1) topLeft.setText(Character.toString(player));
 					if(z == 2) middleLeft.setText(Character.toString(player));
@@ -1290,9 +857,7 @@ public class TicTacToeBoard {
 					if(z == 2) middleRight.setText(Character.toString(player));
 					if(z == 3) bottomRight.setText(Character.toString(player));
 				}
-				player = (char) (player + waiter);  
-				waiter = (char) (player - waiter);
-				player = (char) (player - waiter);
+				switchPlayer();
 				return 'C';
 			}
 
@@ -1304,29 +869,27 @@ public class TicTacToeBoard {
 		y = 0;
 		z = 0;
 		{
-			if(a[0][0] == waiter) x += 1;
+			if(grid[0][0] == waiter) x += 1;
 			else z = 1;
-			if(a[0][0] == player) y += 1;
+			if(grid[0][0] == player) y += 1;
 		}
 		{
-			if(a[1][1] == waiter) x += 1;
+			if(grid[1][1] == waiter) x += 1;
 			else z = 2;
-			if(a[1][1] == player) y += 1;
+			if(grid[1][1] == player) y += 1;
 		}
 		{
-			if(a[2][2] == waiter) x += 1;
+			if(grid[2][2] == waiter) x += 1;
 			else z = 3;
-			if(a[2][2] == player) y += 1;
+			if(grid[2][2] == player) y += 1;
 		}
 
 		if(x == 2 && y != 1) {
-			a[z-1][z-1] = player;
+			grid[z-1][z-1] = player;
 			if(z == 1) topLeft.setText(Character.toString(player));
 			if(z == 2) middleMiddle.setText(Character.toString(player));
 			if(z == 3) bottomRight.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}  
 
@@ -1334,41 +897,41 @@ public class TicTacToeBoard {
 		y = 0;
 		z = 0;
 		{
-			if(a[0][2] == waiter) x += 1;
+			if(grid[0][2] == waiter) x += 1;
 			else z = 1;
-			if(a[0][2] == player) y += 1;
+			if(grid[0][2] == player) y += 1;
 		}
 		{
-			if(a[1][1] == waiter) x += 1;
+			if(grid[1][1] == waiter) x += 1;
 			else z = 2;
-			if(a[1][1] == player) y += 1;
+			if(grid[1][1] == player) y += 1;
 		}
 		{
-			if(a[2][0] == waiter) x += 1;
+			if(grid[2][0] == waiter) x += 1;
 			else z = 3;
-			if(a[2][0] == player) y += 1;
+			if(grid[2][0] == player) y += 1;
 		}
 
 		if(x == 2 && y != 1) {
 			if(z == 1) {
-				a[0][2] = player;
+				grid[0][2] = player;
 				topRight.setText(Character.toString(player));
 			}
 			if(z == 2) {
-				a[1][1] = player;
+				grid[1][1] = player;
 				middleMiddle.setText(Character.toString(player));
 			}
 			if(z == 3) { 
-				a[2][0] = player;
+				grid[2][0] = player;
 				bottomLeft.setText(Character.toString(player));
 			}
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
 
 		// check for potential "fork" opportunities
+		// (so chance to set up two lines where you win in next move,
+		//  leaving your opponent only able to block one)
 
 		// check for forks from sides
 
@@ -1380,115 +943,91 @@ public class TicTacToeBoard {
 		boolBottomRight = false;
 
 		x = 0; 
-		if(a[0][0] == player) { x += 1; boolTopLeft = true; }
-		if(a[0][2] == player) { x += 1; boolTopRight = true; }
-		if(a[2][0] == player) { x += 1; boolBottomLeft = true; }
-		if(a[2][2] == player) { x += 1; boolBottomRight = true;}
+		if(grid[0][0] == player) { x += 1; boolTopLeft = true; }
+		if(grid[0][2] == player) { x += 1; boolTopRight = true; }
+		if(grid[2][0] == player) { x += 1; boolBottomLeft = true; }
+		if(grid[2][2] == player) { x += 1; boolBottomRight = true;}
 
 		if(x == 2) { 
 			// now check if opposite (or side-by side)
 			if(boolTopRight && boolBottomLeft) {
 				//check if "side roads" free
-				if(a[0][1] == '_' && a[0][0] == '_' && a[1][0] == '_') {
-					a[0][0] = player;
+				if(grid[0][1] == '_' && grid[0][0] == '_' && grid[1][0] == '_') {
+					grid[0][0] = player;
 					topLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][2] == '_' && a[2][2] == '_' && a[2][1] == '_') {
-					a[2][2] = player;
+				if(grid[1][2] == '_' && grid[2][2] == '_' && grid[2][1] == '_') {
+					grid[2][2] = player;
 					bottomRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			} else if(boolTopLeft && boolBottomRight) {
-				if(a[0][1] == '_' && a[0][2] == '_' && a[1][2] == '_') {
-					a[0][2] = player;
+				if(grid[0][1] == '_' && grid[0][2] == '_' && grid[1][2] == '_') {
+					grid[0][2] = player;
 					topRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][0] == '_' && a[2][0] == '_' && a[2][1] == '_') {
-					a[2][0] = player;
+				if(grid[1][0] == '_' && grid[2][0] == '_' && grid[2][1] == '_') {
+					grid[2][0] = player;
 					bottomLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 				// side-by-side
 			} else if(boolTopLeft && boolTopRight) { // top  
-				if(a[1][0] == '_' && a[1][1] == '_' && a[2][0] == '_') {  
-					a[2][0] = player;                  //a[0][1] already
+				if(grid[1][0] == '_' && grid[1][1] == '_' && grid[2][0] == '_') {  
+					grid[2][0] = player;                  //a[0][1] already
 					bottomLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';                         
 				}
-				if(a[1][1] == '_' && a[1][2] == '_' && a[2][2] == '_') {
-					a[2][2] = player;
+				if(grid[1][1] == '_' && grid[1][2] == '_' && grid[2][2] == '_') {
+					grid[2][2] = player;
 					bottomRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			} else if(boolTopRight && boolBottomRight) { // right
-				if(a[0][1] == '_' && a[1][1] == '_' && a[0][0] == '_') {
-					a[0][0] = player;
+				if(grid[0][1] == '_' && grid[1][1] == '_' && grid[0][0] == '_') {
+					grid[0][0] = player;
 					topLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][1] == '_' && a[2][1] == '_' && a[2][0] == '_') { 
-					a[2][0] = player;
+				if(grid[1][1] == '_' && grid[2][1] == '_' && grid[2][0] == '_') { 
+					grid[2][0] = player;
 					bottomLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			} else if(boolBottomLeft && boolBottomRight) { // bottom
-				if(a[1][0] == '_' && a[1][1] == '_' && a[0][0] == '_') {
-					a[0][0] = player;
+				if(grid[1][0] == '_' && grid[1][1] == '_' && grid[0][0] == '_') {
+					grid[0][0] = player;
 					topLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][1] == '_' && a[1][2] == '_' && a[0][2] == '_') {
-					a[0][2] = player;
+				if(grid[1][1] == '_' && grid[1][2] == '_' && grid[0][2] == '_') {
+					grid[0][2] = player;
 					topRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			} else if(boolTopLeft && boolBottomLeft) { // left
-				if(a[0][1] == '_' && a[1][1] == '_' && a[0][2] == '_') {
-					a[0][2] = player;
+				if(grid[0][1] == '_' && grid[1][1] == '_' && grid[0][2] == '_') {
+					grid[0][2] = player;
 					topRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][1] == '_' && a[2][1] == '_' && a[2][2] == '_') {
-					a[2][2] = player;
+				if(grid[1][1] == '_' && grid[2][1] == '_' && grid[2][2] == '_') {
+					grid[2][2] = player;
 					bottomRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			}
@@ -1504,39 +1043,35 @@ public class TicTacToeBoard {
 			z = 0;
 
 			{            
-				if(a[i][0] == player) x += 1;
+				if(grid[i][0] == player) x += 1;
 				else z = 1;
-				if(a[i][0] == waiter) y += 1;
+				if(grid[i][0] == waiter) y += 1;
 			}
 			{
-				if(a[i][1] == player) x += 1;
+				if(grid[i][1] == player) x += 1;
 				else z = 2;
-				if(a[i][1] == waiter) y += 1;
+				if(grid[i][1] == waiter) y += 1;
 			} 
 			{
-				if(a[i][2] == player) x += 1;
+				if(grid[i][2] == player) x += 1;
 				else z = 3;
-				if(a[i][2] == waiter) y += 1;
+				if(grid[i][2] == waiter) y += 1;
 			}  
 
 			if(i == 0 && x == 2 && y == 1) {
 				if(z == 1) { 
 					// check if boxes needed for fork are free
-					if(a[1][1] == '_' && a[2][0] == '_' && a[2][1] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[2][0] == '_' && grid[2][1] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				} else if(z == 3) {   // z = 2 already covered 
-					if(a[1][1] == '_' && a[2][1] == '_' && a[2][2] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[2][1] == '_' && grid[2][2] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				}
@@ -1544,37 +1079,29 @@ public class TicTacToeBoard {
 
 			if(i == 1 && x == 2 && y == 1) {
 				if(z == 1) { 
-					if(a[0][2] == '_' && a[2][0] == '_' && a[2][2] == '_') {
-						a[0][2] = player;
+					if(grid[0][2] == '_' && grid[2][0] == '_' && grid[2][2] == '_') {
+						grid[0][2] = player;
 						topRight.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
-					if(a[0][0] == '_' && a[0][2] == '_' && a[2][2] == '_') {
-						a[2][2] = player;
+					if(grid[0][0] == '_' && grid[0][2] == '_' && grid[2][2] == '_') {
+						grid[2][2] = player;
 						bottomRight.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				} else if(z == 3) {   // z = 2 not fork situation 
-					if(a[0][0] == '_' && a[0][2] == '_' && a[2][2] == '_') {
-						a[0][0] = player;
+					if(grid[0][0] == '_' && grid[0][2] == '_' && grid[2][2] == '_') {
+						grid[0][0] = player;
 						topLeft.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
-					if(a[0][0] == '_' && a[0][2] == '_' && a[2][0] == '_') {
-						a[2][0] = player;
+					if(grid[0][0] == '_' && grid[0][2] == '_' && grid[2][0] == '_') {
+						grid[2][0] = player;
 						bottomLeft.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				}
@@ -1582,21 +1109,17 @@ public class TicTacToeBoard {
 
 			if(i == 2 && x == 2 && y == 1) {
 				if(z == 1) { 
-					if(a[0][0] == '_' && a[0][1] == '_' && a[1][1] == '_') {
-						a[1][1] = player;
+					if(grid[0][0] == '_' && grid[0][1] == '_' && grid[1][1] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}   
 				} else if(z == 3) {   // z = 2 already covered 
-					if(a[1][1] == '_' && a[0][1] == '_' && a[0][2] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[0][1] == '_' && grid[0][2] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				}
@@ -1608,38 +1131,34 @@ public class TicTacToeBoard {
 			z = 0;
 
 			{            
-				if(a[0][i] == player) x += 1;
+				if(grid[0][i] == player) x += 1;
 				else z = 1;
-				if(a[0][i] == waiter) y += 1;
+				if(grid[0][i] == waiter) y += 1;
 			}
 			{
-				if(a[1][i] == player) x += 1;
+				if(grid[1][i] == player) x += 1;
 				else z = 2;
-				if(a[1][i] == waiter) y += 1;
+				if(grid[1][i] == waiter) y += 1;
 			}
 			{
-				if(a[2][i] == player) x += 1;
+				if(grid[2][i] == player) x += 1;
 				else z = 3;
-				if(a[2][i] == waiter) y += 1;
+				if(grid[2][i] == waiter) y += 1;
 			} 
 
 			if(i == 0 && x == 2 && y == 1) {
 				if(z == 1) { 
-					if(a[1][1] == '_' && a[0][2] == '_' && a[1][2] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[0][2] == '_' && grid[1][2] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				} else if(z == 3) {   // z = 2 already covered 
-					if(a[1][1] == '_' && a[1][2] == '_' && a[2][2] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[1][2] == '_' && grid[2][2] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				}
@@ -1647,37 +1166,29 @@ public class TicTacToeBoard {
 
 			if(i == 1 && x == 2 && y == 1) {
 				if(z == 1) { 
-					if(a[0][2] == '_' && a[2][0] == '_' && a[2][2] == '_') {
-						a[2][0] = player;
+					if(grid[0][2] == '_' && grid[2][0] == '_' && grid[2][2] == '_') {
+						grid[2][0] = player;
 						bottomLeft.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
-					if(a[0][0] == '_' && a[2][0] == '_' && a[2][2] == '_') {
-						a[2][2] = player;
+					if(grid[0][0] == '_' && grid[2][0] == '_' && grid[2][2] == '_') {
+						grid[2][2] = player;
 						bottomRight.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				} else if(z == 3) {   // z = 2 not fork situation 
-					if(a[0][0] == '_' && a[0][2] == '_' && a[2][2] == '_') {
-						a[0][0] = player;
+					if(grid[0][0] == '_' && grid[0][2] == '_' && grid[2][2] == '_') {
+						grid[0][0] = player;
 						topLeft.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
-					if(a[0][0] == '_' && a[0][2] == '_' && a[2][0] == '_') {
-						a[0][2] = player;
+					if(grid[0][0] == '_' && grid[0][2] == '_' && grid[2][0] == '_') {
+						grid[0][2] = player;
 						topRight.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				}
@@ -1685,21 +1196,17 @@ public class TicTacToeBoard {
 
 			if(i == 2 && x == 2 && y == 1) {
 				if(z == 1) { 
-					if(a[0][0] == '_' && a[1][0] == '_' && a[1][1] == '_') {
-						a[1][1] = player;
+					if(grid[0][0] == '_' && grid[1][0] == '_' && grid[1][1] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}   
 				} else if(z == 3) {   // z = 2 already covered 
-					if(a[1][1] == '_' && a[1][0] == '_' && a[2][0] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[1][0] == '_' && grid[2][0] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				}
@@ -1711,86 +1218,70 @@ public class TicTacToeBoard {
 		z = 0;
 
 		{
-			if(a[0][0] == player) x += 1;
+			if(grid[0][0] == player) x += 1;
 			else z = 1;
-			if(a[0][0] == waiter) y += 1;
+			if(grid[0][0] == waiter) y += 1;
 		}
 		{
-			if(a[1][1] == player) x += 1;
+			if(grid[1][1] == player) x += 1;
 			else z = 2;
-			if(a[1][1] == waiter) y += 1;
+			if(grid[1][1] == waiter) y += 1;
 		}
 		{
-			if(a[2][2] == player) x += 1;
+			if(grid[2][2] == player) x += 1;
 			else z = 3;
-			if(a[2][2] == waiter) y += 1;
+			if(grid[2][2] == waiter) y += 1;
 		}
 
 		if(x == 2 && y == 1) {
 			if(z == 1) {
-				if(a[2][0] == '_' && a[2][1] == '_' && a[0][2] == '_') {
-					a[2][0] = player;
+				if(grid[2][0] == '_' && grid[2][1] == '_' && grid[0][2] == '_') {
+					grid[2][0] = player;
 					bottomLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][2] == '_' && a[1][2] == '_' && a[2][0] == '_') {
-					a[0][2] = player;
+				if(grid[0][2] == '_' && grid[1][2] == '_' && grid[2][0] == '_') {
+					grid[0][2] = player;
 					topRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][1] == '_' && a[2][0] == '_' && a[2][1] == '_') {
-					a[2][1] = player;
+				if(grid[0][1] == '_' && grid[2][0] == '_' && grid[2][1] == '_') {
+					grid[2][1] = player;
 					bottomMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][0] == '_' && a[0][2] == '_' && a[1][2] == '_') {
-					a[1][2] = player;
+				if(grid[1][0] == '_' && grid[0][2] == '_' && grid[1][2] == '_') {
+					grid[1][2] = player;
 					middleRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			}else if(z == 3) { // z = 2 already covered
-				if(a[0][1] == '_' && a[0][2] == '_' && a[2][0] == '_') {
-					a[0][2] = player;
+				if(grid[0][1] == '_' && grid[0][2] == '_' && grid[2][0] == '_') {
+					grid[0][2] = player;
 					topRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][0] == '_' && a[2][0] == '_' && a[0][2] == '_') {
-					a[2][0] = player;
+				if(grid[1][0] == '_' && grid[2][0] == '_' && grid[0][2] == '_') {
+					grid[2][0] = player;
 					bottomLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][1] == '_' && a[0][2] == '_' && a[2][1] == '_') {
-					a[0][1] = player;
+				if(grid[0][1] == '_' && grid[0][2] == '_' && grid[2][1] == '_') {
+					grid[0][1] = player;
 					topMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C'; 
 				}
-				if(a[1][0] == '_' && a[2][0] == '_' && a[1][2] == '_') {
-					a[1][0] = player;
+				if(grid[1][0] == '_' && grid[2][0] == '_' && grid[1][2] == '_') {
+					grid[1][0] = player;
 					middleLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			}  
@@ -1801,86 +1292,70 @@ public class TicTacToeBoard {
 		z = 0;
 
 		{
-			if(a[0][2] == player) x += 1;
+			if(grid[0][2] == player) x += 1;
 			else z = 1;
-			if(a[0][2] == waiter) y += 1;
+			if(grid[0][2] == waiter) y += 1;
 		}
 		{
-			if(a[1][1] == player) x += 1;
+			if(grid[1][1] == player) x += 1;
 			else z = 2;
-			if(a[1][1] == waiter) y += 1;
+			if(grid[1][1] == waiter) y += 1;
 		}
 		{
-			if(a[2][0] == player) x += 1;
+			if(grid[2][0] == player) x += 1;
 			else z = 3;
-			if(a[2][0] == waiter) y += 1;
+			if(grid[2][0] == waiter) y += 1;
 		}
 
 		if(x == 2 && y == 1) {
 			if(z == 1) {
-				if(a[0][0] == '_' && a[1][0] == '_' && a[2][2] == '_') {
-					a[0][0] = player;
+				if(grid[0][0] == '_' && grid[1][0] == '_' && grid[2][2] == '_') {
+					grid[0][0] = player;
 					topLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][0] == '_' && a[2][1] == '_' && a[2][2] == '_') {
-					a[2][2] = player;
+				if(grid[0][0] == '_' && grid[2][1] == '_' && grid[2][2] == '_') {
+					grid[2][2] = player;
 					bottomRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][0] == '_' && a[1][0] == '_' && a[1][2] == '_') {
-					a[1][0] = player;
+				if(grid[0][0] == '_' && grid[1][0] == '_' && grid[1][2] == '_') {
+					grid[1][0] = player;
 					middleLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[2][1] == '_' && a[2][2] == '_' && a[0][1] == '_') {
-					a[2][1] = player;
+				if(grid[2][1] == '_' && grid[2][2] == '_' && grid[0][1] == '_') {
+					grid[2][1] = player;
 					bottomMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			} else if(z == 3) {
-				if(a[0][0] == '_' && a[1][2] == '_' && a[2][2] == '_') {
-					a[2][2] = player;
+				if(grid[0][0] == '_' && grid[1][2] == '_' && grid[2][2] == '_') {
+					grid[2][2] = player;
 					bottomRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][0] == '_' && a[0][1] == '_' && a[2][2] == '_') {
-					a[0][0] = player;
+				if(grid[0][0] == '_' && grid[0][1] == '_' && grid[2][2] == '_') {
+					grid[0][0] = player;
 					topLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][0] == '_' && a[1][2] == '_' && a[2][2] == '_') {
-					a[1][2] = player;
+				if(grid[1][0] == '_' && grid[1][2] == '_' && grid[2][2] == '_') {
+					grid[1][2] = player;
 					middleRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][0] == '_' && a[0][1] == '_' && a[2][1] == '_') {
-					a[0][1] = player;
+				if(grid[0][0] == '_' && grid[0][1] == '_' && grid[2][1] == '_') {
+					grid[0][1] = player;
 					topMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			}
@@ -1898,10 +1373,10 @@ public class TicTacToeBoard {
 		boolBottomRight = false;
 
 		x = 0; 
-		if(a[0][0] == waiter) { x += 1; boolTopLeft = true; }
-		if(a[0][2] == waiter) { x += 1; boolTopRight = true; }
-		if(a[2][0] == waiter) { x += 1; boolBottomLeft = true; }
-		if(a[2][2] == waiter) { x += 1; boolBottomRight = true; }
+		if(grid[0][0] == waiter) { x += 1; boolTopLeft = true; }
+		if(grid[0][2] == waiter) { x += 1; boolTopRight = true; }
+		if(grid[2][0] == waiter) { x += 1; boolBottomLeft = true; }
+		if(grid[2][2] == waiter) { x += 1; boolBottomRight = true; }
 
 
 		if(x == 2) { 
@@ -1912,37 +1387,29 @@ public class TicTacToeBoard {
 			if(boolTopRight && boolBottomLeft) {
 
 				//check if "side roads" free
-				if(a[0][1] == '_' && a[0][0] == '_' && a[1][0] == '_') {
-					a[0][1] = player;
+				if(grid[0][1] == '_' && grid[0][0] == '_' && grid[1][0] == '_') {
+					grid[0][1] = player;
 					topMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][2] == '_' && a[2][2] == '_' && a[2][1] == '_') {
-					a[1][2] = player;
+				if(grid[1][2] == '_' && grid[2][2] == '_' && grid[2][1] == '_') {
+					grid[1][2] = player;
 					middleRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			} else if(boolTopLeft && boolBottomRight) {
-				if(a[0][1] == '_' && a[0][2] == '_' && a[1][2] == '_') {
-					a[0][1] = player;
+				if(grid[0][1] == '_' && grid[0][2] == '_' && grid[1][2] == '_') {
+					grid[0][1] = player;
 					topMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][0] == '_' && a[2][0] == '_' && a[2][1] == '_') {
-					a[1][0] = player;
+				if(grid[1][0] == '_' && grid[2][0] == '_' && grid[2][1] == '_') {
+					grid[1][0] = player;
 					middleLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 				// side-by-side
@@ -1950,71 +1417,55 @@ public class TicTacToeBoard {
 				// in this case block by marking middle
 
 			} else if(boolTopLeft && boolTopRight) { // top  
-				if(a[1][0] == '_' && a[1][1] == '_' && a[2][0] == '_') {  
-					a[1][1] = player;
+				if(grid[1][0] == '_' && grid[1][1] == '_' && grid[2][0] == '_') {  
+					grid[1][1] = player;
 					middleMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';                         
 				}
-				if(a[1][1] == '_' && a[1][2] == '_' && a[2][2] == '_') {
-					a[1][1] = player;
+				if(grid[1][1] == '_' && grid[1][2] == '_' && grid[2][2] == '_') {
+					grid[1][1] = player;
 					middleMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			} else if(boolTopRight && boolBottomRight) { // right
-				if(a[0][1] == '_' && a[1][1] == '_' && a[0][0] == '_') {
-					a[1][1] = player;
+				if(grid[0][1] == '_' && grid[1][1] == '_' && grid[0][0] == '_') {
+					grid[1][1] = player;
 					middleMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				} 
-				if(a[1][1] == '_' && a[2][1] == '_' && a[2][0] == '_') { 
-					a[1][1] = player;
+				if(grid[1][1] == '_' && grid[2][1] == '_' && grid[2][0] == '_') { 
+					grid[1][1] = player;
 					middleMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			} else if(boolBottomLeft && boolBottomRight) { // bottom
-				if(a[1][0] == '_' && a[1][1] == '_' && a[0][0] == '_') {
-					a[1][1] = player;
+				if(grid[1][0] == '_' && grid[1][1] == '_' && grid[0][0] == '_') {
+					grid[1][1] = player;
 					middleMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][1] == '_' && a[1][2] == '_' && a[0][2] == '_') {
-					a[1][1] = player;
+				if(grid[1][1] == '_' && grid[1][2] == '_' && grid[0][2] == '_') {
+					grid[1][1] = player;
 					middleMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			} else if(boolTopLeft && boolBottomLeft) { // left
-				if(a[0][1] == '_' && a[1][1] == '_' && a[0][2] == '_') {
-					a[1][1] = player;
+				if(grid[0][1] == '_' && grid[1][1] == '_' && grid[0][2] == '_') {
+					grid[1][1] = player;
 					middleMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][1] == '_' && a[2][1] == '_' && a[2][2] == '_') {
-					a[1][1] = player;
+				if(grid[1][1] == '_' && grid[2][1] == '_' && grid[2][2] == '_') {
+					grid[1][1] = player;
 					middleMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			}
@@ -2033,39 +1484,35 @@ public class TicTacToeBoard {
 			z = 0;
 
 			{            
-				if(a[i][0] == waiter) x += 1;
+				if(grid[i][0] == waiter) x += 1;
 				else z = 1;
-				if(a[i][0] == player) y += 1;
+				if(grid[i][0] == player) y += 1;
 			}
 			{
-				if(a[i][1] == waiter) x += 1;
+				if(grid[i][1] == waiter) x += 1;
 				else z = 2;
-				if(a[i][1] == player) y += 1;
+				if(grid[i][1] == player) y += 1;
 			}  
 			{
-				if(a[i][2] == waiter) x += 1;
+				if(grid[i][2] == waiter) x += 1;
 				else z = 3;
-				if(a[i][2] == player) y += 1;
+				if(grid[i][2] == player) y += 1;
 			}  
 
 			if(i == 0 && x == 2 && y == 1) {
 				if(z == 1) { 
 					// check if boxes needed for fork are free
-					if(a[1][1] == '_' && a[2][0] == '_' && a[2][1] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[2][0] == '_' && grid[2][1] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				} else if(z == 3) {   // z = 2 already covered 
-					if(a[1][1] == '_' && a[2][1] == '_' && a[2][2] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[2][1] == '_' && grid[2][2] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				}
@@ -2073,37 +1520,29 @@ public class TicTacToeBoard {
 
 			if(i == 1 && x == 2 && y == 1) {
 				if(z == 1) { 
-					if(a[0][2] == '_' && a[2][0] == '_' && a[2][2] == '_') {
-						a[0][2] = player;
+					if(grid[0][2] == '_' && grid[2][0] == '_' && grid[2][2] == '_') {
+						grid[0][2] = player;
 						topRight.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
-					if(a[0][0] == '_' && a[0][2] == '_' && a[2][2] == '_') {
-						a[2][2] = player;
+					if(grid[0][0] == '_' && grid[0][2] == '_' && grid[2][2] == '_') {
+						grid[2][2] = player;
 						bottomRight.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				} else if(z == 3) {   // z = 2 not fork situation 
-					if(a[0][0] == '_' && a[0][2] == '_' && a[2][2] == '_') {
-						a[0][0] = player;
+					if(grid[0][0] == '_' && grid[0][2] == '_' && grid[2][2] == '_') {
+						grid[0][0] = player;
 						topLeft.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
-					if(a[0][0] == '_' && a[0][2] == '_' && a[2][0] == '_') {
-						a[2][0] = player;
+					if(grid[0][0] == '_' && grid[0][2] == '_' && grid[2][0] == '_') {
+						grid[2][0] = player;
 						bottomLeft.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				}
@@ -2111,21 +1550,17 @@ public class TicTacToeBoard {
 
 			if(i == 2 && x == 2 && y == 1) {
 				if(z == 1) { 
-					if(a[0][0] == '_' && a[0][1] == '_' && a[1][1] == '_') {
-						a[1][1] = player;
+					if(grid[0][0] == '_' && grid[0][1] == '_' && grid[1][1] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}   
 				} else if(z == 3) {   // z = 2 already covered 
-					if(a[1][1] == '_' && a[0][1] == '_' && a[0][2] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[0][1] == '_' && grid[0][2] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				}
@@ -2137,38 +1572,34 @@ public class TicTacToeBoard {
 			z = 0;
 
 			{            
-				if(a[0][i] == waiter) x += 1;
+				if(grid[0][i] == waiter) x += 1;
 				else z = 1;
-				if(a[0][i] == player) y += 1;
+				if(grid[0][i] == player) y += 1;
 			}
 			{
-				if(a[1][i] == waiter) x += 1;
+				if(grid[1][i] == waiter) x += 1;
 				else z = 2;
-				if(a[1][i] == player) y += 1;
+				if(grid[1][i] == player) y += 1;
 			}
 			{
-				if(a[2][i] == waiter) x += 1;
+				if(grid[2][i] == waiter) x += 1;
 				else z = 3;
-				if(a[2][i] == player) y += 1;
+				if(grid[2][i] == player) y += 1;
 			} 
 
 			if(i == 0 && x == 2 && y == 1) {
 				if(z == 1) { 
-					if(a[1][1] == '_' && a[0][2] == '_' && a[1][2] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[0][2] == '_' && grid[1][2] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				} else if(z == 3) {   // z = 2 already covered 
-					if(a[1][1] == '_' && a[1][2] == '_' && a[2][2] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[1][2] == '_' && grid[2][2] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					} 
 				}
@@ -2176,37 +1607,29 @@ public class TicTacToeBoard {
 
 			if(i == 1 && x == 2 && y == 1) {
 				if(z == 1) { 
-					if(a[0][2] == '_' && a[2][0] == '_' && a[2][2] == '_') {
-						a[2][0] = player;
+					if(grid[0][2] == '_' && grid[2][0] == '_' && grid[2][2] == '_') {
+						grid[2][0] = player;
 						bottomLeft.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
-					if(a[0][0] == '_' && a[2][0] == '_' && a[2][2] == '_') {
-						a[2][2] = player;
+					if(grid[0][0] == '_' && grid[2][0] == '_' && grid[2][2] == '_') {
+						grid[2][2] = player;
 						bottomRight.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				} else if(z == 3) {   // z = 2 not fork situation 
-					if(a[0][0] == '_' && a[0][2] == '_' && a[2][2] == '_') {
-						a[0][0] = player;
+					if(grid[0][0] == '_' && grid[0][2] == '_' && grid[2][2] == '_') {
+						grid[0][0] = player;
 						topLeft.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
-					if(a[0][0] == '_' && a[0][2] == '_' && a[2][0] == '_') {
-						a[0][2] = player;
+					if(grid[0][0] == '_' && grid[0][2] == '_' && grid[2][0] == '_') {
+						grid[0][2] = player;
 						topRight.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}  
 				}
@@ -2214,21 +1637,17 @@ public class TicTacToeBoard {
 
 			if(i == 2 && x == 2 && y == 1) {
 				if(z == 1) { 
-					if(a[0][0] == '_' && a[1][0] == '_' && a[1][1] == '_') {
-						a[1][1] = player;
+					if(grid[0][0] == '_' && grid[1][0] == '_' && grid[1][1] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}   
 				} else if(z == 3) {   // z = 2 already covered 
-					if(a[1][1] == '_' && a[1][0] == '_' && a[2][0] == '_') {
-						a[1][1] = player;
+					if(grid[1][1] == '_' && grid[1][0] == '_' && grid[2][0] == '_') {
+						grid[1][1] = player;
 						middleMiddle.setText(Character.toString(player));
-						player = (char) (player + waiter);  
-						waiter = (char) (player - waiter);
-						player = (char) (player - waiter);
+						switchPlayer();
 						return 'C';
 					}
 				}
@@ -2240,86 +1659,70 @@ public class TicTacToeBoard {
 		z = 0;
 
 		{
-			if(a[0][0] == waiter) x += 1;
+			if(grid[0][0] == waiter) x += 1;
 			else z = 1;
-			if(a[0][0] == player) y += 1;
+			if(grid[0][0] == player) y += 1;
 		} 
 		{
-			if(a[1][1] == waiter) x += 1;
+			if(grid[1][1] == waiter) x += 1;
 			else z = 2;
-			if(a[1][1] == player) y += 1;
+			if(grid[1][1] == player) y += 1;
 		} 
 		{
-			if(a[2][2] == waiter) x += 1;
+			if(grid[2][2] == waiter) x += 1;
 			else z = 3;
-			if(a[2][2] == player) y += 1;
+			if(grid[2][2] == player) y += 1;
 		} 
 
 		if(x == 2 && y == 1) {
 			if(z == 1) {
-				if(a[2][0] == '_' && a[2][1] == '_' && a[0][2] == '_') {
-					a[2][0] = player;
+				if(grid[2][0] == '_' && grid[2][1] == '_' && grid[0][2] == '_') {
+					grid[2][0] = player;
 					bottomLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][2] == '_' && a[1][2] == '_' && a[2][0] == '_') {
-					player = a[0][2];
+				if(grid[0][2] == '_' && grid[1][2] == '_' && grid[2][0] == '_') {
+					player = grid[0][2];
 					topRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][1] == '_' && a[2][0] == '_' && a[2][1] == '_') {
-					a[2][1] = player;
+				if(grid[0][1] == '_' && grid[2][0] == '_' && grid[2][1] == '_') {
+					grid[2][1] = player;
 					bottomMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][0] == '_' && a[0][2] == '_' && a[1][2] == '_') {
-					a[1][2] = player;
+				if(grid[1][0] == '_' && grid[0][2] == '_' && grid[1][2] == '_') {
+					grid[1][2] = player;
 					middleRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			}else if(z == 3) { // z = 2 already covered
-				if(a[0][1] == '_' && a[0][2] == '_' && a[2][0] == '_') {
-					a[0][2] = player;
+				if(grid[0][1] == '_' && grid[0][2] == '_' && grid[2][0] == '_') {
+					grid[0][2] = player;
 					topRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][0] == '_' && a[2][0] == '_' && a[0][2] == '_') {
-					a[2][0] = player;
+				if(grid[1][0] == '_' && grid[2][0] == '_' && grid[0][2] == '_') {
+					grid[2][0] = player;
 					bottomLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][1] == '_' && a[0][2] == '_' && a[2][1] == '_') {
-					a[0][1] = player;
+				if(grid[0][1] == '_' && grid[0][2] == '_' && grid[2][1] == '_') {
+					grid[0][1] = player;
 					topMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C'; 
 				}
-				if(a[1][0] == '_' && a[2][0] == '_' && a[1][2] == '_') {
-					a[1][0] = player;
+				if(grid[1][0] == '_' && grid[2][0] == '_' && grid[1][2] == '_') {
+					grid[1][0] = player;
 					middleLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			}
@@ -2330,86 +1733,70 @@ public class TicTacToeBoard {
 		z = 0;
 
 		{
-			if(a[0][2] == waiter) x += 1;
+			if(grid[0][2] == waiter) x += 1;
 			else z = 1;
-			if(a[0][2] == player) y += 1;
+			if(grid[0][2] == player) y += 1;
 		}
 		{
-			if(a[1][1] == waiter) x += 1;
+			if(grid[1][1] == waiter) x += 1;
 			else z = 2;
-			if(a[1][1] == player) y += 1;
+			if(grid[1][1] == player) y += 1;
 		}
 		{
-			if(a[2][0] == waiter) x += 1;
+			if(grid[2][0] == waiter) x += 1;
 			else z = 3;
-			if(a[2][0] == player) y += 1;
+			if(grid[2][0] == player) y += 1;
 		}
 
 		if(x == 2 && y == 1) {
 			if(z == 1) {
-				if(a[0][0] == '_' && a[1][0] == '_' && a[2][2] == '_') {
-					a[0][0] = player;
+				if(grid[0][0] == '_' && grid[1][0] == '_' && grid[2][2] == '_') {
+					grid[0][0] = player;
 					topLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][0] == '_' && a[2][1] == '_' && a[2][2] == '_') {
-					a[2][2] = player;
+				if(grid[0][0] == '_' && grid[2][1] == '_' && grid[2][2] == '_') {
+					grid[2][2] = player;
 					bottomRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][0] == '_' && a[1][0] == '_' && a[1][2] == '_') {
-					a[1][0] = player;
+				if(grid[0][0] == '_' && grid[1][0] == '_' && grid[1][2] == '_') {
+					grid[1][0] = player;
 					middleLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[2][1] == '_' && a[2][2] == '_' && a[0][1] == '_') {
-					a[2][1] = player;
+				if(grid[2][1] == '_' && grid[2][2] == '_' && grid[0][1] == '_') {
+					grid[2][1] = player;
 					bottomMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			} else if(z == 3) {
-				if(a[0][0] == '_' && a[1][2] == '_' && a[2][2] == '_') {
-					a[2][2] = player;
+				if(grid[0][0] == '_' && grid[1][2] == '_' && grid[2][2] == '_') {
+					grid[2][2] = player;
 					bottomRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][0] == '_' && a[0][1] == '_' && a[2][2] == '_') {
-					a[0][0] = player;
+				if(grid[0][0] == '_' && grid[0][1] == '_' && grid[2][2] == '_') {
+					grid[0][0] = player;
 					topLeft.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[1][0] == '_' && a[1][2] == '_' && a[2][2] == '_') {
-					a[1][2] = player;
+				if(grid[1][0] == '_' && grid[1][2] == '_' && grid[2][2] == '_') {
+					grid[1][2] = player;
 					middleRight.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
-				if(a[0][0] == '_' && a[0][1] == '_' && a[2][1] == '_') {
-					a[0][1] = player;
+				if(grid[0][0] == '_' && grid[0][1] == '_' && grid[2][1] == '_') {
+					grid[0][1] = player;
 					topMiddle.setText(Character.toString(player));
-					player = (char) (player + waiter);  
-					waiter = (char) (player - waiter);
-					player = (char) (player - waiter);
+					switchPlayer();
 					return 'C';
 				}
 			}
@@ -2417,117 +1804,91 @@ public class TicTacToeBoard {
 
 		// if centre free, take centre
 
-		if(a[1][1] == '_') {
-			a[1][1] = player;
+		if(grid[1][1] == '_') {
+			grid[1][1] = player;
 			middleMiddle.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
 
 		// if opponent in corner, take opposite corner
 
-		if(a[0][0] == waiter && a[2][2] == '_') {
-			a[2][2] = player;
+		if(grid[0][0] == waiter && grid[2][2] == '_') {
+			grid[2][2] = player;
 			bottomRight.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
-		if(a[0][2] == waiter && a[2][0] == '_') {
-			a[2][0] = player;
+		if(grid[0][2] == waiter && grid[2][0] == '_') {
+			grid[2][0] = player;
 			bottomLeft.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
-		if(a[2][2] == waiter && a[0][0] == '_') {
-			a[0][0] = player;
+		if(grid[2][2] == waiter && grid[0][0] == '_') {
+			grid[0][0] = player;
 			topLeft.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C'; 
 		}
-		if(a[2][0] == waiter && a[0][2] == '_') {
-			a[0][2] = player;
+		if(grid[2][0] == waiter && grid[0][2] == '_') {
+			grid[0][2] = player;
 			topRight.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
 
 		// play corner square, if free
 
-		if(a[0][0] == '_') {
-			a[0][0] = player;
+		if(grid[0][0] == '_') {
+			grid[0][0] = player;
 			topLeft.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
-		if(a[0][2] == '_') {
-			a[0][2] = player;
+		if(grid[0][2] == '_') {
+			grid[0][2] = player;
 			topRight.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		} 
-		if(a[2][2] == '_') {
-			a[2][2] = player;
+		if(grid[2][2] == '_') {
+			grid[2][2] = player;
 			bottomRight.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
-		if(a[2][0] == '_') {
-			a[2][0] = player;
+		if(grid[2][0] == '_') {
+			grid[2][0] = player;
 			bottomLeft.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
 
 		// play side square, if free
 
-		if(a[0][1] == '_') {
-			a[0][1] = player;
+		if(grid[0][1] == '_') {
+			grid[0][1] = player;
 			topMiddle.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
-		if(a[1][2] == '_') {
-			a[1][2] = player;
+		if(grid[1][2] == '_') {
+			grid[1][2] = player;
 			middleRight.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
-		if(a[2][1] == '_') {
-			a[2][1] = player;
+		if(grid[2][1] == '_') {
+			grid[2][1] = player;
 			bottomMiddle.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
-		if(a[1][0] == '_') {
-			a[1][0] = player;
+		if(grid[1][0] == '_') {
+			grid[1][0] = player;
 			middleLeft.setText(Character.toString(player));
-			player = (char) (player + waiter);  
-			waiter = (char) (player - waiter);
-			player = (char) (player - waiter);
+			switchPlayer();
 			return 'C';
 		}
 
