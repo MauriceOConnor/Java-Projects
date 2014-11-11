@@ -126,6 +126,7 @@ public class TicTacToeBoard {
 					// user's selection
 
 					checkGoCheck();
+					
 				}
 
 			}
@@ -431,7 +432,7 @@ public class TicTacToeBoard {
 	 *  
 	 */
 
-	char checkWin(char[][] a) {
+	char checkWin() {
 		int x, y;
 
 		// check rows and columns
@@ -440,8 +441,8 @@ public class TicTacToeBoard {
 			x = 0;
 			y = 0;
 			for (int j = 0; j < 3; j++) {
-				if (a[i][j] == 'X') x += 1;
-				if (a[i][j] == 'O') y += 1;
+				if (grid[i][j] == 'X') x += 1;
+				if (grid[i][j] == 'O') y += 1;
 			}
 
 			if(x == 3) return 'X';
@@ -450,8 +451,8 @@ public class TicTacToeBoard {
 			x = 0;
 			y = 0;
 			for (int j = 0; j < 3; j++) {
-				if (a[j][i] == 'X') x += 1;
-				if (a[j][i] == 'O') y += 1;
+				if (grid[j][i] == 'X') x += 1;
+				if (grid[j][i] == 'O') y += 1;
 			}
 
 			if(x == 3) return 'X';
@@ -462,28 +463,28 @@ public class TicTacToeBoard {
 
 		x = 0;
 		y = 0;
-		if(a[0][0] == 'X') x += 1;
-		if(a[0][0] == 'O') y += 1;
+		if(grid[0][0] == 'X') x += 1;
+		if(grid[0][0] == 'O') y += 1;
 
-		if(a[1][1] == 'X') x += 1;
-		if(a[1][1] == 'O') y += 1;
+		if(grid[1][1] == 'X') x += 1;
+		if(grid[1][1] == 'O') y += 1;
 
-		if(a[2][2] == 'X') x += 1;
-		if(a[2][2] == 'O') y += 1;
+		if(grid[2][2] == 'X') x += 1;
+		if(grid[2][2] == 'O') y += 1;
 
 		if(x == 3) return 'X';
 		if(y == 3) return 'O';
 
 		x = 0;
 		y = 0;
-		if(a[0][2] == 'X') x += 1;
-		if(a[0][2] == 'O') y += 1;
+		if(grid[0][2] == 'X') x += 1;
+		if(grid[0][2] == 'O') y += 1;
 
-		if(a[1][1] == 'X') x += 1;
-		if(a[1][1] == 'O') y += 1;
+		if(grid[1][1] == 'X') x += 1;
+		if(grid[1][1] == 'O') y += 1;
 
-		if(a[2][0] == 'X') x += 1;
-		if(a[2][0] == 'O') y += 1;
+		if(grid[2][0] == 'X') x += 1;
+		if(grid[2][0] == 'O') y += 1;
 
 		if(x == 3) return 'X';
 		if(y == 3) return 'O';
@@ -492,7 +493,7 @@ public class TicTacToeBoard {
 
 		for(int i = 0; i < 3; i++) {
 			for(int j = 0; j < 3; j++) {
-				if(a[i][j] != '_') x += 1;
+				if(grid[i][j] != '_') x += 1;
 			}
 		}
 		if(x == 9) return 'D';
@@ -516,7 +517,7 @@ public class TicTacToeBoard {
 	
 	void checkGoCheck() {
 		
-		winner = checkWin(grid); 
+		winner = checkWin(); 
 
 		if(winner == player) {
 			JOptionPane.showMessageDialog(jfrm, "You win!",
@@ -548,7 +549,7 @@ public class TicTacToeBoard {
 		winner = computerGo(); // this method plays the 
 		// computer's turn
 
-		if(compFirst) winner = checkWin(grid);
+		if(compFirst) winner = checkWin();
 		// if the computer goes first it also goes last (there 
 		// are 9 moves). This if clause ensures that, if the 
 		// board is full when the computer makes its move, it is 
